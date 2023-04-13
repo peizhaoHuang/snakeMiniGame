@@ -25,9 +25,7 @@ class ScorePanel {
     // 分数自增
     scoreChange() {
         let newScore = ++this.score;
-        console.log(newScore)
         this.scoreEnd = newScore;
-        console.log(this.scoreEnd)
         this.scoreEle.innerHTML = newScore + '';
         if (this.score % this.maxLevel == 0) {
             this.levelChange();
@@ -42,7 +40,10 @@ class ScorePanel {
     }
     // 历史最高分存储
     maxHistoryScore() {
-        if (localStorage.getItem("maxScore") && Number(localStorage.getItem("maxScore")) < this.scoreEnd) {
+        // 判断有没有maxScore
+        if (!localStorage.getItem("maxScore")) {
+            localStorage.setItem("maxScore",'1');
+        } else if (Number(localStorage.getItem("maxScore")) < this.scoreEnd){
             localStorage.setItem("maxScore",JSON.stringify(this.scoreEnd));
         }
     }

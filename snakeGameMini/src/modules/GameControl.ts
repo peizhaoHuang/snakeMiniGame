@@ -31,7 +31,12 @@ class GameControl {
         // 全局监听键盘按下 bind绑定this
         document.addEventListener('keydown',this.keydownHandle.bind(this));
         // 把记录渲染到游戏页面
-        this.maxHistoryEle.innerHTML = localStorage.getItem('maxScore') + '';
+        console.log('nihda')
+        if ( !localStorage.getItem('maxScore')) {
+            this.maxHistoryEle.innerHTML = this.scorePanel.maxHistory + '';
+        } else {
+            this.maxHistoryEle.innerHTML = localStorage.getItem('maxScore') + '';
+        }
         // 让蛇动起来
         this.run();
     }
