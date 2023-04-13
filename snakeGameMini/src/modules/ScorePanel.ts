@@ -26,10 +26,13 @@ class ScorePanel {
     scoreChange() {
         let newScore = ++this.score;
         this.scoreEnd = newScore;
+        console.log(1111)
         this.scoreEle.innerHTML = newScore + '';
+        // 等级升级
         if (this.score % this.maxLevel == 0) {
             this.levelChange();
         }
+        // 存储一次记录
         this.maxHistoryScore()
     }
     // 升级
