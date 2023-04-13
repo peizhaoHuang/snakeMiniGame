@@ -43,7 +43,7 @@ class ScorePanel {
         // 判断有没有maxScore
         if (!localStorage.getItem("maxScore")) {
             localStorage.setItem("maxScore",'1');
-        } else if (Number(localStorage.getItem("maxScore")) < this.scoreEnd){
+        } else if (Number(localStorage.getItem("maxScore")) < this.scoreEnd){ //何时取历史记录
             localStorage.setItem("maxScore",JSON.stringify(this.scoreEnd));
         }
     }

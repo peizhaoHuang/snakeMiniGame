@@ -32,6 +32,7 @@ class GameControl {
         document.addEventListener('keydown',this.keydownHandle.bind(this));
         // 把记录渲染到游戏页面
         console.log('nihda')
+        // 判断一下是否存到记录
         if ( !localStorage.getItem('maxScore')) {
             this.maxHistoryEle.innerHTML = this.scorePanel.maxHistory + '';
         } else {
