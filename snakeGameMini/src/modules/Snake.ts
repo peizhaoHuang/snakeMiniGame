@@ -81,6 +81,7 @@ class Snake{
     checkHit() {
         for (let i = 1; i < this.bodies.length; i++) {
             if (this.X === (this.bodies[i] as HTMLElement).offsetLeft && this.Y === (this.bodies[i] as HTMLElement).offsetTop) {
+                // 重新开始游戏
                 window.location.reload();
                 throw new Error('The snack hit its bodies!')
             }

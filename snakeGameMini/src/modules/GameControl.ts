@@ -76,6 +76,7 @@ class GameControl {
             this.snake.X = X;
             this.snake.Y = Y;
         } catch(event: any) {
+            // 捕获撞墙
             alert(event.message + 'Game Over!');
             this.isLive = false;
         }
